@@ -1,0 +1,29 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: kafka-stg-sc
+provisioner: kubernetes.io/no-provisioner
+parameters:
+  repl: "3"
+  io_priority: "high"
+  group: "zk_vg1"
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: kafka-stg-sc-rep3
+provisioner: kubernetes.io/no-provisioner
+parameters:
+  repl: "3"
+  io_priority: "high"
+  group: "kafka_vg"
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: zk-stg-sc
+provisioner: kubernetes.io/no-provisioner
+parameters:
+  repl: "3"
+  io_priority: "high"
+  group: "zk_vg"
+

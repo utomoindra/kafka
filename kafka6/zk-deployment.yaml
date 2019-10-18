@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: zookeeper1
+  namespace: kafka-test
+spec:
+  replicas: 1
+  selector:
+    app: zk-uat
+  template:
+    metadata:
+      labels:
+        app: zk-uat
+    spec:
+      nodeSelector:
+        kafka_node: "1"
+      containers:
+      - name: zookeeper1
+        image: digitalwonderland/zookeeper
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
+        env:
+        - name: ZOOKEEPER_ID
+          value: "1"
+        - name: ZOOKEEPER_SERVER_1
+          value: zoo1
+        - name: ZOOKEEPER_SERVER_2
+          value: zoo2
+        - name: ZOOKEEPER_SERVER_3
+          value: zoo3
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: zookeeper2
+  namespace: kafka-test
+spec:
+  replicas: 1
+  selector:
+    app: zk-uat
+  template:
+    metadata:
+      labels:
+        app: zk-uat
+    spec:
+      nodeSelector:
+        kafka_node: "1"
+      containers:
+      - name: zookeeper2
+        image: digitalwonderland/zookeeper
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
+        env:
+        - name: ZOOKEEPER_ID
+          value: "2"
+        - name: ZOOKEEPER_SERVER_1
+          value: zoo1
+        - name: ZOOKEEPER_SERVER_2
+          value: zoo2
+        - name: ZOOKEEPER_SERVER_3
+          value: zoo3
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: zookeeper3
+  namespace: kafka-test
+spec:
+  replicas: 1
+  selector:
+    app: zk-uat
+  template:
+    metadata:
+      labels:
+        app: zk-uat
+    spec:
+      nodeSelector:
+        kafka_node: "2"
+      containers:
+      - name: zookeeper3
+        image: digitalwonderland/zookeeper
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
+        env:
+        - name: ZOOKEEPER_ID
+          value: "3"
+        - name: ZOOKEEPER_SERVER_1
+          value: zoo1
+        - name: ZOOKEEPER_SERVER_2
+          value: zoo2
+        - name: ZOOKEEPER_SERVER_3
+          value: zoo3

@@ -1,0 +1,132 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-0
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-0
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-1
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-2
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-3
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-3
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-4
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-4
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-broker-node01-kafka-5
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-broker
+  local:
+    path: /data/kafka/broker/node01/kafka-5
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---

@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ali-pv-zookeeper
+spec:
+  storageClassName: kafka-test-stg-sc
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce #type of access
+  hostPath:
+    path: "/data/zookeper-test" #host location

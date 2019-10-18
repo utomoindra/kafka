@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: kafka-pv-stg-sc
+  labels:
+    type: local
+spec:
+  storageClassName: kafka-stg-sc
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/kafka"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: zk-pv-stg-sc1
+  labels:
+    type: local
+spec:
+  storageClassName: local-storage-zk
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/zookeeper1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: zk-pv-stg-sc2
+  labels:
+    type: local
+spec:
+  storageClassName: local-storage-zk
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/zookeeper2"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: zk-pv-stg-sc3
+  labels:
+    type: local
+spec:
+  storageClassName: local-storage-zk
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/zookeeper3"

@@ -1,0 +1,131 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node01-kafka-0
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node01/kafka-0
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node01-kafka-1
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node01/kafka-1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node01-kafka-2
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node01/kafka-2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node01-kafka-3
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node01/kafka-3
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node01
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node02-kafka-1
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node02/kafka-1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node02
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv-node02-kafka-2
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: kafka-local
+  local:
+    path: /data/kafka/node02/kafka-2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node02

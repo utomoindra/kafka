@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: inside-0
+  namespace: kafka-test
+spec:
+  selector:
+    app: kafka
+    kafka-broker-id: "0"
+  ports:
+  - protocol: TCP
+    targetPort: 9092
+    port: 9092
+    nodePort: 32400
+  type: NodePort

@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: kafka-test-stg-sc
+parameters:
+  group: zk_test_vg
+  io_priority: high
+  repl: '1'
+provisioner: alicloud/disk
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+

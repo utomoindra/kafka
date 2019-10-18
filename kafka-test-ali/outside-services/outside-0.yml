@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: outside-0
+  namespace: kafka-uat
+spec:
+  selector:
+    app: kafka
+  ports:
+  - protocol: TCP
+    targetPort: 9094
+    port: 34000
+  type: NodePort

@@ -27,11 +27,9 @@ spec:
   type: NodePort
   ports:
   - port: 9092
-    name: kaf2
+    name: kaf1
     targetPort: 9092
     nodePort: 30902
     protocol: TCP
   selector:
-    app: kafka2
----
-
+    app: kaf2

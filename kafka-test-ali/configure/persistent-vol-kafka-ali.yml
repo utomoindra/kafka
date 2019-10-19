@@ -1,0 +1,39 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ali-pv-kafka-0
+spec:
+  storageClassName: kafka-test-stg-sc-replication3
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce #type of access
+  hostPath:
+    path: "/data/kafka-test/kafka-0" #host location
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ali-pv-kafka-1
+spec:
+  storageClassName: kafka-test-stg-sc-replication3
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce #type of access
+  hostPath:
+    path: "/data/kafka-test/kafka-1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ali-pv-kafka-2
+spec:
+  storageClassName: kafka-test-stg-sc-replication3
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce #type of access
+  hostPath:
+    path: "/data/kafka-test/kafka-2"
